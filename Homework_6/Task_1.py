@@ -9,6 +9,4 @@ arguments = [int(i) for i in input("Введите первый элемент �
 
 arithmetic_progression = [i for i in
                           range(arguments[0], arguments[0] + (arguments[2] - 1) * arguments[1] + 1, arguments[1])]
-print(arithmetic_progression)
-
-
+print(*arithmetic_progression, sep="\n")
