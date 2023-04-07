@@ -51,3 +51,16 @@ def find_contact(info_about_contact: str) -> list[dict]:
             if info_about_contact in value:
                 data.append(contact)
     return data
+
+
+def delete_contact(index: str) -> bool:
+    global phone_book
+    if index.isdigit() and 0 < int(index) <= len(phone_book):
+        phone_book.pop(int(index) - 1)
+        return True
+    else:
+        return False
+
+
+def change_contact():
+    pass

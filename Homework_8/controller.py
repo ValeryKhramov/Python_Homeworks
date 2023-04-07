@@ -26,7 +26,11 @@ def start_phone_book():
             case 6:
                 pass
             case 7:
-                pass
+                index = view.get_info(txt.text_delete_contact)
+                if fun.delete_contact(index):
+                    view.print_info(txt.delete_contact_successful)
+                else:
+                    view.print_info(txt.error_index)
             case 8:
                 if fun.exit_phone_book():
                     if view.confirm(txt.is_changed):
