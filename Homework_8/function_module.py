@@ -64,15 +64,9 @@ def check_contact(index: str) -> list:
 
 def change_contact(contact: dict, index: int):
     global phone_book
-    data = phone_book.copy()
-    data[index - 1] = contact
-    with open(PATH, 'w', encoding='UTF-8') as file:
-        file.write(data)
+    phone_book[index - 1] = contact
 
 
 def delete_contact(index: int):
     global phone_book
-    data = phone_book.copy()
-    data.pop(index - 1)
-    with open(PATH, 'w', encoding='UTF-8') as file:
-        file.write(data)
+    phone_book.pop(index - 1)
