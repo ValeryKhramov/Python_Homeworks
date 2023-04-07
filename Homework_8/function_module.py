@@ -48,7 +48,7 @@ def find_contact(info_about_contact: str) -> list[dict]:
     data = []
     for contact in phone_book:
         for value in contact.items():
-            if info_about_contact in value:
+            if info_about_contact.lower() in value[1].lower():
                 data.append(contact)
     return data
 
