@@ -24,10 +24,16 @@ def start_phone_book():
                 info_contact = view.get_info(txt.find_contact)
                 view.show_contact(fun.find_contact(info_contact), txt.no_find_contact)
             case 6:
-                pass
+                index = view.get_info(txt.text_change_contact)
+                if fun.check_contact(index)[0]:
+                    fun.change_contact(view.new_contact(), fun.check_contact(index)[1])
+                    view.print_info(txt.change_contact_successful)
+                else:
+                    view.print_info(txt.error_index)
             case 7:
                 index = view.get_info(txt.text_delete_contact)
-                if fun.delete_contact(index):
+                if fun.check_contact(index)[0]:
+                    fun.delete_contact(fun.check_contact(index)[1])
                     view.print_info(txt.delete_contact_successful)
                 else:
                     view.print_info(txt.error_index)

@@ -16,6 +16,7 @@ no_find_contact = 'Такого контакта не существует в т
 text_delete_contact = 'Введите id контакта, который необходимо удалить: '
 text_change_contact = 'Введите id контакта, который необходимо изменить: '
 delete_contact_successful = 'Контакт успешно удален!'
+change_contact_successful = 'Контакт успешно изменен!'
 
 error_index = 'Индекс контакта введен некорректно.'
 

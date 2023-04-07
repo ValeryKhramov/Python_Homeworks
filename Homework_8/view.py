@@ -55,5 +55,5 @@ def confirm(message: str) -> bool:
 
 def get_info(message):
     print()
-    num = input(message)
-    return num
+    info = input(message)
+    return info

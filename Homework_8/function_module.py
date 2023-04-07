@@ -53,14 +53,26 @@ def find_contact(info_about_contact: str) -> list[dict]:
     return data
 
 
-def delete_contact(index: str) -> bool:
+def check_contact(index: str) -> list:
     global phone_book
     if index.isdigit() and 0 < int(index) <= len(phone_book):
-        phone_book.pop(int(index) - 1)
-        return True
+        arguments_list = [True, int(index)]
     else:
-        return False
+        arguments_list = [False]
+    return arguments_list
 
 
-def change_contact():
-    pass
+def change_contact(contact: dict, index: int):
+    global phone_book
+    data = phone_book.copy()
+    data[index - 1] = contact
+    with open(PATH, 'w', encoding='UTF-8') as file:
+        file.write(data)
+
+
+def delete_contact(index: int):
+    global phone_book
+    data = phone_book.copy()
+    data.pop(index - 1)
+    with open(PATH, 'w', encoding='UTF-8') as file:
+        file.write(data)
