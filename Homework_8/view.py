@@ -28,7 +28,7 @@ def show_contact(book: list[dict], message: str):
                   f'{contact.get("comment"):<20}')
         print('-' * 63 + '\n')
     else:
-        print_info(txt.no_contact_or_file)
+        print_info(message)
 
 
 def print_info(message: str):
@@ -51,3 +51,9 @@ def confirm(message: str) -> bool:
         return True
     else:
         return False
+
+
+def get_info(message):
+    print()
+    num = input(message)
+    return num

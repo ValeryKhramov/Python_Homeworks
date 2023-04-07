@@ -35,10 +35,19 @@ def add_contact(contact: dict):
     phone_book.append(contact)
 
 
-
 def exit_phone_book() -> bool:
     global phone_book, start_phone_book
     if phone_book == start_phone_book:
         return False
     else:
         return True
+
+
+def find_contact(info_about_contact: str) -> list[dict]:
+    global phone_book
+    data = []
+    for contact in phone_book:
+        for value in contact.items():
+            if info_about_contact in value:
+                data.append(contact)
+    return data

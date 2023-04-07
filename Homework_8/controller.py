@@ -21,7 +21,8 @@ def start_phone_book():
                 fun.add_contact(contact)
                 view.print_info(txt.new_contact_successful)
             case 5:
-                pass
+                info_contact = view.get_info(txt.find_contact)
+                view.show_contact(fun.find_contact(info_contact), txt.no_find_contact)
             case 6:
                 pass
             case 7:
@@ -33,4 +34,3 @@ def start_phone_book():
                         view.print_info(txt.save_successful)
                 view.print_info(txt.bye_bye)
                 exit()
-
